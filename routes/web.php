@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OnlyOneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
+Route::get('history', [OnlyOneController::class, 'history'])->name('onlyone.history');
